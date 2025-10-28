@@ -12,11 +12,13 @@ function generate() {
 
     document.getElementById("password").innerText = password;
     document.getElementById("copyBtn").style.display = "block";
+    document.getElementById("message").style.display = "None"
 }
 
 function copyToClipBoard() {
     const password = document.getElementById("password").innerText;
     navigator.clipboard.writeText(password).then(() => {
+        document.getElementById("message").style.display = "block"
         document.getElementById("message").innerText = "Password copied to clipboard!";
     });
 }
